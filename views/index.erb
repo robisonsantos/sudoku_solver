@@ -12,6 +12,10 @@
       <h1> Sudoku Solver </h1>
       <p class="lead"> Fill up the template with hints and press 'Solve Now' button.</p>
 
+      <div id="error" class="alert alert-danger hidden">
+        This sudoku has no solution.
+      </div>
+
       <div class="row">
         <div id="sudoku">
           <table>
@@ -36,7 +40,7 @@
           <input type="button" id="clear" value="Clear Board" class="btn btn-danger btn-lg" />
         </div>
 
-        <div id="retry_action">
+        <div id="retry_action" class="hidden">
           <input type="button" id="retry" value="Again" class="btn btn-success btn-lg" />
         </div>
       </div>

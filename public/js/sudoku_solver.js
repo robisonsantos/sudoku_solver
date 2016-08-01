@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  $("#retry_action").hide();
 
   $("input[type='text'").bind("input propertychange", function() {
     if (/^[1-9]{1}$/.test($(this).val()) === false) {
@@ -25,12 +24,12 @@ $(document).ready(function() {
       method: "POST",
       data: { "hints" : sudoku_hints },
       error: function(xhr, status, error) {
-        alert("We got an error. " + status + " " + error);
+        $("#error").removeClass("hidden");
       },
       success: function(data) {
         $("#sudoku").html(data);
-        $("#retry_action").show();
-        $("#solve_action").hide();
+        $("#retry_action").removeClass("hidden");
+        $("#solve_action").addClass("hidden");
       }
     });
   });
@@ -42,6 +41,7 @@ $(document).ready(function() {
       for(col = 0; col < 9; col++) {
         var input_id = "#val_" + row + "_" + col;
         $(input_id).val("");
+        $("#error").addClass("hidden");
       }
     }
   });
