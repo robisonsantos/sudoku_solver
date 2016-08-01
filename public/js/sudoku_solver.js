@@ -1,6 +1,12 @@
 $(document).ready(function() {
   $("#retry_action").hide();
 
+  $("input[type='text'").bind("input propertychange", function() {
+    if (/^[1-9]{1}$/.test($(this).val()) === false) {
+      $(this).val("");
+    }
+  });
+
   $("#solve").click(function() {
     var sudoku_hints = [];
 
