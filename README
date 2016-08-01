@@ -1,0 +1,3 @@
+This is a simple application that solves sudoku puzzles using Dancing Links algorithm.
+
+To run it locally type: foreman start
