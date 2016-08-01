@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $("input[type='text'").bind("input propertychange", function() {
+  $(".entry").bind("input propertychange", function() {
     if (/^[1-9]{1}$/.test($(this).val()) === false) {
       $(this).val("");
     }
