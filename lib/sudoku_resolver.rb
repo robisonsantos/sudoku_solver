@@ -1,6 +1,5 @@
-require_relative "dlx.rb"
-require_relative "exact_cover_matrix.rb"
-require "terminal-table"
+require_relative "dlx"
+require_relative "exact_cover_matrix"
 
 module Sudoku
   class Resolver
@@ -19,8 +18,7 @@ module Sudoku
 
       decrypted_solution = decrypt_solution(solution.first)
 
-      sudoku_matrix = sudoku_matrix(decrypted_solution)
-      print_solution sudoku_matrix
+      sudoku_matrix(decrypted_solution)
     end
 
     ## Return a list of lines that should
@@ -57,53 +55,5 @@ module Sudoku
       solution_list.each {|row, col, value| sudoku_matrix[row] ||= []; sudoku_matrix[row][col] = value }
       sudoku_matrix
     end
-
-    def print_solution(sudoku_matrix)
-      sudoku = Terminal::Table.new :rows => sudoku_matrix
-      puts sudoku
-    end
   end
 end
-
-## Main
-=begin
-hints = [
-[0,0,0,2,6,0,7,0,1],
-[6,8,0,0,7,0,0,9,0],
-[1,9,0,0,0,4,5,0,0],
-[8,2,0,1,0,0,0,4,0],
-[0,0,4,6,0,2,9,0,0],
-[0,5,0,0,0,3,0,2,8],
-[0,0,9,3,0,0,0,7,4],
-[0,4,0,0,5,0,0,3,6],
-[7,0,3,0,1,8,0,0,0]
-]
-=end
-=begin
-hints = [
-[0,0,0,6,0,0,4,0,0],
-[7,0,0,0,0,3,6,0,0],
-[0,0,0,0,9,1,0,8,0],
-[0,0,0,0,0,0,0,0,0],
-[0,5,0,1,8,0,0,0,3],
-[0,0,0,3,0,6,0,4,5],
-[0,4,0,2,0,0,0,6,0],
-[9,0,3,0,0,0,0,0,0],
-[0,2,0,0,0,0,1,0,0]
-]
-=end
-
-hints = [
-[0,2,0,0,0,0,0,0,0],
-[0,0,0,6,0,0,0,0,3],
-[0,7,4,0,8,0,0,0,0],
-[0,0,0,0,0,3,0,0,2],
-[0,8,0,0,4,0,0,1,0],
-[6,0,0,5,0,0,0,0,0],
-[0,0,0,0,1,0,7,8,0],
-[5,0,0,0,0,9,0,0,0],
-[0,0,0,0,0,0,0,4,0]
-]
-
-resolver = Sudoku::Resolver.new
-resolver.resolve(hints)

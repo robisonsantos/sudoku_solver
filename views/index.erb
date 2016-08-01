@@ -10,22 +10,22 @@
     <div class="container">
 
       <h1> Sudoku Solver </h1>
-      <p class="lead"> Fill out the template with hints and press 'Solve Now' button.</p>
+      <p class="lead"> Fill up the template with hints and press 'Solve Now' button.</p>
 
       <div class="row">
         <div id="sudoku">
           <table>
-            <%(0...9).each do |row_index| %>
+            <% @sample.each_with_index do |row, row_index| %>
               <tr id="<%= row_index %>" />
-                <%(0...9).each do |col_index| %>
-                  <td id='<%="#{row_index}_#{col_index}" %>'>
+              <% row.each_with_index do |hint, col_index| %>
+                <td id='<%="#{row_index}_#{col_index}" %>'>
                     <input type="text"
                            id='val_<%= "#{row_index}_#{col_index}" %>'
-                           class="entry"/>
+                           class="entry"
+                           value="<%= hint == 0 ? '' : hint %>"/>
                   </td>
-                <% end %>
-              </tr>
-            <%end%>
+              <% end %>
+            <% end %>
           </table>
         </div>
       </div>
