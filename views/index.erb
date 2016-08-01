@@ -9,36 +9,18 @@
   <body>
     <h1> Sudoku Solver </h1>
     <h2> Fill out the template with hints and press 'Solve Now' button.</h2>
-    <form id="sudoku">
-      <div>
+    <form id="sudoku_form">
+      <div id="sudoku">
         <table>
-          <tr>
-              <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-          </tr>
-          <tr>
-              <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-          </tr>
-          <tr>
-              <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-          </tr>
-          <tr>
-              <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-          </tr>
-          <tr>
-              <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-          </tr>
-          <tr>
-              <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-          </tr>
-          <tr>
-              <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-          </tr>
-          <tr>
-              <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-          </tr>
-          <tr>
-              <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-          </tr>
+          <%(0...9).each do |row_index| %>
+            <tr id="<%= row_index %>" />
+              <%(0...9).each do |col_index| %>
+                <td id='<%= "#{row_index}_#{col_index}" %>'>
+                  <input type="text" name='val_<%= "#{row_index}_#{col_index}" %>' class="entry"/>
+                </td>
+              <% end %>
+            </tr>
+          <%end%>
         </table>
       </div>
       <input type="submit" value="Solve Now" />

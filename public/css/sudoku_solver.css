@@ -27,3 +27,12 @@ tr:nth-child(1) td{
 td:nth-child(1) {
     border-left-width: 3px;
 }
+
+input.entry {
+    width: 40px;
+    height: 40px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 35px;
+    background-color: white;
+}
