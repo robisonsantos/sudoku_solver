@@ -7,26 +7,43 @@
     <title>Sudoku Solver</title>
   </head>
   <body>
-    <h1> Sudoku Solver </h1>
-    <h2> Fill out the template with hints and press 'Solve Now' button.</h2>
-    <form id="sudoku_form">
+    <div class="container">
+
+      <div>
+        <h1> Sudoku Solver </h1>
+        <h2> Fill out the template with hints and press 'Solve Now' button.</h2>
+      </div>
+
       <div id="sudoku">
         <table>
           <%(0...9).each do |row_index| %>
             <tr id="<%= row_index %>" />
               <%(0...9).each do |col_index| %>
-                <td id='<%= "#{row_index}_#{col_index}" %>'>
-                  <input type="text" name='val_<%= "#{row_index}_#{col_index}" %>' class="entry"/>
+                <td id='<%="#{row_index}_#{col_index}" %>'>
+                  <input type="text"
+                         id='val_<%= "#{row_index}_#{col_index}" %>'
+                         class="entry"/>
                 </td>
               <% end %>
             </tr>
           <%end%>
         </table>
       </div>
-      <input type="submit" value="Solve Now" />
-    <form>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      <div>
+        <input type="button" id="solve" value="Solve Now" class="btn btn-primary btn-lg" />
+        <input type="button" id="clear" value="Clear Board" class="btn btn-danger btn-lg" />
+      </div>
+
+    </div>
+
+    <script
+        src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
     <script src="js/sudoku_solver.js"></script>
   </body>
 </html>
