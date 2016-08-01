@@ -36,3 +36,13 @@ input.entry {
     font-size: 35px;
     background-color: white;
 }
+
+.solution {
+    font-weight: bold;
+    text-align: center;
+    font-size: 35px;
+}
+
+.hidden {
+    display: none;
+}

@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  $("#retry_action").hide();
+
   $("#solve").click(function() {
     var sudoku_hints = [];
 
@@ -21,6 +23,8 @@ $(document).ready(function() {
       },
       success: function(data) {
         $("#sudoku").html(data);
+        $("#retry_action").show();
+        $("#solve_action").hide();
       }
     });
   });
@@ -34,6 +38,11 @@ $(document).ready(function() {
         $(input_id).val("");
       }
     }
+  });
+
+
+  $("#retry").click(function() {
+    location.reload();
   });
 
 });

@@ -1,0 +1,9 @@
+<table>
+  <% @solution.each do |row| %>
+    <tr>
+      <% row.each do |col| %>
+        <td class="solution"> <%= col %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
