@@ -27,6 +27,7 @@ post '/solution' do
 
   begin
     @solution = resolver.resolve(hints)
+    @solution = @solution.zip(hints).map {|solution, hint| solution.zip(hint)}
     erb :solution
   rescue
     status 404

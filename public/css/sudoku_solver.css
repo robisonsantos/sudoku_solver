@@ -37,10 +37,10 @@ input.entry {
     background-color: white;
 }
 
-.solution {
-    font-weight: bold;
+.solved {
     text-align: center;
-    font-size: 35px;
+    font-size: 30px;
+    color: #555;
 }
 
 .hidden {
@@ -54,4 +54,10 @@ input.entry {
 
 #sudoku {
     margin-bottom: 20px;
+}
+
+.hinted {
+    font-weight: bold;
+    text-align: center;
+    font-size: 30px;
 }

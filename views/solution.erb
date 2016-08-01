@@ -1,8 +1,8 @@
 <table>
   <% @solution.each do |row| %>
     <tr>
-      <% row.each do |col| %>
-        <td class="solution"> <%= col %></td>
+      <% row.each do |solution, hint| %>
+        <td class="<%= solution == hint ? 'hinted' : 'solved' %>"> <%= solution %></td>
       <% end %>
     </tr>
   <% end %>
