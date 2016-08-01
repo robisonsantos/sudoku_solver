@@ -46,3 +46,12 @@ input.entry {
 .hidden {
     display: none;
 }
+
+.container {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+#sudoku {
+    margin-bottom: 20px;
+}
