@@ -30,6 +30,7 @@ $(document).ready(function() {
         $("#sudoku").html(data);
         $("#retry_action").removeClass("hidden");
         $("#solve_action").addClass("hidden");
+        $("#error").addClass("hidden");
       }
     });
   });
